@@ -17,7 +17,7 @@ const MAINNET_RPC_URL =
   process.env.ALCHEMY_MAINNET_RPC_URL ||
   "https://eth-mainnet.alchemyapi.io/v2/your-api-key"
 const RINKEBY_RPC_URL =
-  process.env.RINKEBY_RPC_URL || "https://eth-rinkeby.alchemyapi.io/v2/your-api-key"
+  process.env.RINKEBY_RPC_URL 
 const KOVAN_RPC_URL = process.env.KOVAN_RPC_URL || "https://eth-kovan.alchemyapi.io/v2/your-api-key"
 const POLYGON_MAINNET_RPC_URL =
   process.env.POLYGON_MAINNET_RPC_URL || "https://polygon-mainnet.alchemyapi.io/v2/your-api-key"
@@ -48,7 +48,7 @@ module.exports = {
     },
     kovan: {
       url: KOVAN_RPC_URL,
-      accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+      accounts: [PRIVATE_KEY],
       //accounts: {
       //     mnemonic: MNEMONIC,
       // },
@@ -57,7 +57,7 @@ module.exports = {
     },
     rinkeby: {
       url: RINKEBY_RPC_URL,
-      accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+      accounts: [PRIVATE_KEY],
       //   accounts: {
       //     mnemonic: MNEMONIC,
       //   },
@@ -111,14 +111,12 @@ module.exports = {
   solidity: {
     compilers: [
       {
-        version: "0.8.7",
+        version: "0.8.8",
       },
       {
         version: "0.6.6",
       },
-      {
-        version: "0.4.24",
-      },
+     
     ],
   },
   mocha: {
